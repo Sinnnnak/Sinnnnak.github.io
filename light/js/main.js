@@ -577,9 +577,13 @@ var contactForm = function() {
 	               	}, 1400);
 		               
 		            } else {
-		               $('#form-message-warning').html(msg);
-			            $('#form-message-warning').fadeIn();
-			            $submit.css('display', 'none');
+						$('#form-message-warning').hide();
+			            setTimeout(function(){
+	               		$('#contactForm').fadeOut();
+	               	}, 1000);
+			            setTimeout(function(){
+			               $('#form-message-success').fadeIn();   
+	               	}, 1400);
 		            }
 			      },
 			      error: function() {
