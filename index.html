@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Pro Visions (رؤى الاحتراف) — Enterprise Technology, Integrated</title>
+  <meta name="description" content="Pro Visions is a Saudi systems integrator delivering cloud, infrastructure, cybersecurity and collaboration solutions for government, banking and energy — from architecture to 24/7 operations." />
+  <meta name="theme-color" content="#0a1628" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pro Visions — Enterprise Technology, Integrated" />
+  <meta property="og:description" content="Cloud, infrastructure, cybersecurity and collaboration — engineered end-to-end for the Kingdom's most demanding sectors." />
+  <meta property="og:image" content="assets/img/og-cover.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a1628'/%3E%3Cpath d='M11 8h7a5 5 0 0 1 0 10h-3v6h-4z' fill='%232b8fe0'/%3E%3Ccircle cx='18' cy='13' r='2' fill='%2352b78e'/%3E%3C/svg%3E" />
+
+  <!-- Fonts: Latin display/body via Fontshare, Arabic via Google -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- With JS off, force everything visible (progressive enhancement) -->
+  <noscript><style>
+    .loader{display:none!important}
+    [data-reveal],.hero-title .line span,.stat,.nav-inner{opacity:1!important;transform:none!important;visibility:visible!important}
+    body{overflow:auto!important}
+  </style></noscript>
+</head>
+
+<body>
+  <!-- Grain / texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-word">Pro Visions</div>
+    <div class="loader-count"><span id="loaderNum">0</span><i>%</i></div>
+    <div class="loader-bar"><span id="loaderBar"></span></div>
+  </div>
+
+  <!-- ============ CUSTOM CURSOR (desktop, JS-added) ============ -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Pro Visions home">
+        <img src="assets/img/brand/provisions-lockup.svg" alt="Pro Visions" class="brand-mark" />
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about"><i>01</i><span data-ar="من نحن">About</span></a>
+        <a href="#services"><i>02</i><span data-ar="خدماتنا">Services</span></a>
+        <a href="#approach"><i>03</i><span data-ar="منهجنا">Approach</span></a>
+        <a href="#industries"><i>04</i><span data-ar="القطاعات">Industries</span></a>
+        <a href="#clients"><i>05</i><span data-ar="عملاؤنا">Clients</span></a>
+      </nav>
+
+      <div class="nav-right">
+        <span class="nav-time" id="navTime" aria-hidden="true">—</span>
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">العربية</button>
+        <a class="pill" href="#contact"><span data-ar="تواصل معنا">Contact</span> <b aria-hidden="true">→</b></a>
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-links" aria-label="Mobile">
+      <a href="#about"><i>01</i><span data-ar="من نحن">About</span></a>
+      <a href="#services"><i>02</i><span data-ar="خدماتنا">Services</span></a>
+      <a href="#approach"><i>03</i><span data-ar="منهجنا">Approach</span></a>
+      <a href="#industries"><i>04</i><span data-ar="القطاعات">Industries</span></a>
+      <a href="#clients"><i>05</i><span data-ar="عملاؤنا">Clients</span></a>
+      <a href="#contact"><i>06</i><span data-ar="تواصل معنا">Contact</span></a>
+    </nav>
+    <div class="mobile-foot">
+      <span data-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</span>
+      <a href="mailto:info@pvt.com.sa">info@pvt.com.sa</a>
+    </div>
+  </div>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <canvas id="aurora" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <div class="hero-meta" data-reveal>
+          <span class="dot" aria-hidden="true"></span>
+          <span data-ar="الرياض، المملكة العربية السعودية">Riyadh, Kingdom of Saudi Arabia</span>
+          <em data-ar="شريك التقنية للمؤسسات">Enterprise Technology Partner</em>
+        </div>
+
+        <h1 class="hero-title" aria-label="Enterprise technology, integrated">
+          <span class="line l1"><span data-ar="تقنية">Enterprise</span></span>
+          <span class="line l2"><span data-ar="المؤسسات">Technology,</span></span>
+          <span class="line l3"><span data-ar="متكاملة.">Integrated.</span></span>
+        </h1>
+
+        <div class="hero-bottom">
+          <p class="hero-desc" data-reveal data-ar="رؤى الاحتراف مُكامِل أنظمة سعودي يقدّم حلول السحابة والبنية التحتية والأمن السيبراني والتعاون للجهات الحكومية والمصرفية والطاقة — من التصميم المعماري حتى التشغيل على مدار الساعة.">
+            Pro Visions is a Saudi systems integrator delivering cloud, infrastructure,
+            cybersecurity and collaboration for government, banking and energy —
+            from architecture to 24/7 operations.
+          </p>
+          <a class="hero-cta" href="#services" data-reveal aria-label="Explore our services">
+            <span class="hero-cta-ring">
+              <b data-ar="خدماتنا">Services</b>
+              <i aria-hidden="true">↓</i>
+            </span>
+          </a>
+        </div>
+
+        <div class="hero-stats" data-reveal>
+          <div class="stat"><b class="num" data-count="6">0</b><span data-ar="مجالات تخصص">Practice areas</span></div>
+          <div class="stat"><b class="num" data-count="3">0</b><span data-ar="قطاعات منظّمة">Regulated sectors</span></div>
+          <div class="stat"><b>24/7</b><span data-ar="عمليات مُدارة">Managed operations</span></div>
+          <div class="stat"><b>KSA</b><span data-ar="المقر — الرياض">Riyadh HQ</span></div>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span data-ar="مرّر">Scroll</span> <i>↓</i></div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <ul class="marquee-track" id="marqueeTrack">
+        <li>Cloud</li><li>·</li><li>Infrastructure</li><li>·</li><li>Cybersecurity</li><li>·</li>
+        <li>Networking</li><li>·</li><li>Collaboration</li><li>·</li><li>Managed IT</li><li>·</li>
+        <li>Cisco</li><li>·</li><li>Huawei</li><li>·</li><li>Nutanix</li><li>·</li>
+        <li>Hikvision</li><li>·</li><li>Logitech</li><li>·</li>
+      </ul>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="sec-head">
+        <span class="sec-index" aria-hidden="true">01</span>
+        <h2 class="sec-title" data-reveal data-ar="لماذا رؤى الاحتراف">Why Pro Visions</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="lead" data-reveal data-ar="نحن الشريك الوحيد المسؤول بين أهداف عملك والتقنية التي تُحقّقها — نُصمّم، ننفّذ، ونُشغّل كل طبقة.">
+            We are the single accountable partner between your business goals and
+            the technology that delivers them — we design, deploy and operate
+            every layer.
+          </p>
+          <p data-reveal data-ar="من مركز البيانات إلى السحابة، ومن الشبكة إلى غرفة الاجتماعات، نُكامل حلول كبرى الشركات العالمية في منظومة واحدة متماسكة — مدعومة بمهندسين معتمدين ودعم على مدار الساعة.">
+            From the data centre to the cloud, from the network to the boardroom,
+            we integrate best-in-class technology into one coherent system —
+            backed by vendor-certified engineers and round-the-clock support.
+          </p>
+          <p data-reveal data-ar="نعمل في أكثر القطاعات تنظيمًا في المملكة، بما يتوافق مع رؤية 2030 ومتطلبات الامتثال والسيادة الرقمية.">
+            We work in the Kingdom's most regulated sectors — aligned with Vision
+            2030 and built for compliance and digital sovereignty from day one.
+          </p>
+        </div>
+        <aside class="profile-card" data-reveal>
+          <div class="profile-bar" aria-hidden="true"></div>
+          <div class="profile-head">
+            <span data-ar="لمحة عن الشركة">Company</span>
+            <b data-ar="رؤى الاحتراف">Pro Visions</b>
+          </div>
+          <dl class="profile-facts">
+            <div><dt data-ar="المقر">Headquarters</dt><dd data-ar="الرياض، السعودية">Riyadh, KSA</dd></div>
+            <div><dt data-ar="التخصص">Focus</dt><dd data-ar="السحابة · البنية · الأمن · التعاون">Cloud · Infra · Security · AV</dd></div>
+            <div><dt data-ar="القطاعات">Sectors</dt><dd data-ar="حكومي · مصرفي · طاقة">Government · Banking · Energy</dd></div>
+            <div><dt data-ar="التوافق">Alignment</dt><dd>Vision 2030</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section services" id="services">
+      <div class="sec-head">
+        <span class="sec-index" aria-hidden="true">02</span>
+        <h2 class="sec-title" data-reveal data-ar="ما نقدّمه">What we do</h2>
+      </div>
+      <div class="svc-list">
+        <a class="svc-row" href="#contact" data-reveal>
+          <span class="svc-num">01</span>
+          <span class="svc-name" data-ar="حلول ونقل السحابة">Cloud Solutions &amp; Migration</span>
+          <span class="svc-desc" data-ar="نُصمّم ونَنقل ونُشغّل الأحمال على السحابة الخاصة والعامة والهجينة — مع Nutanix ومنصّات مزوّدي السحابة الكبرى.">Design, migrate and run workloads across private, public and hybrid cloud — on Nutanix hyperconverged and hyperscaler platforms.</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="svc-row" href="#contact" data-reveal>
+          <span class="svc-num">02</span>
+          <span class="svc-name" data-ar="البنية التحتية لتقنية المعلومات">IT Infrastructure</span>
+          <span class="svc-desc" data-ar="مراكز بيانات وحوسبة وتخزين وشبكات مبنية على Cisco وHuawei — مرنة بالتصميم، وجاهزة للتوسّع.">Data centre, compute, storage and networking built on Cisco and Huawei — resilient by design, ready to scale.</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="svc-row" href="#contact" data-reveal>
+          <span class="svc-num">03</span>
+          <span class="svc-name" data-ar="الأمن السيبراني والمراقبة">Cybersecurity &amp; Surveillance</span>
+          <span class="svc-desc" data-ar="أمن الشبكات والتحكّم بالوصول ومراقبة بمستوى Hikvision تُبقي البيئات المنظّمة ممتثلة.">Network security, access control and Hikvision-grade surveillance that keep regulated environments compliant.</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="svc-row" href="#contact" data-reveal>
+          <span class="svc-num">04</span>
+          <span class="svc-name" data-ar="الشبكات والاتصال">Networking &amp; Connectivity</span>
+          <span class="svc-desc" data-ar="شبكات محلية وواسعة ولاسلكية للمؤسسات مُهندَسة للاستمرارية والأداء وتجزئة الثقة الصفرية.">Enterprise LAN, WAN and wireless engineered for uptime, throughput and zero-trust segmentation.</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="svc-row" href="#contact" data-reveal>
+          <span class="svc-num">05</span>
+          <span class="svc-name" data-ar="التعاون والصوتيات والمرئيات">Collaboration &amp; AV</span>
+          <span class="svc-desc" data-ar="قاعات اجتماعات واتصالات موحّدة مع Polycom وLogitech — تجربة مرئية أولًا، من قاعة المجلس إلى المكاتب.">Meeting rooms and unified communications with Polycom and Logitech — video-first, from the boardroom to the floor.</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="svc-row" href="#contact" data-reveal>
+          <span class="svc-num">06</span>
+          <span class="svc-name" data-ar="الدعم والإدارة">Managed IT &amp; Support</span>
+          <span class="svc-desc" data-ar="مراقبة على مدار الساعة ومكتب خدمة وإدارة دورة حياة كاملة تُبقي فرقك مُركّزة على مهمتها.">24/7 monitoring, service desk and lifecycle management so your teams stay focused on the mission.</span>
+          <span class="svc-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ APPROACH ============ -->
+    <section class="section approach" id="approach">
+      <div class="sec-head">
+        <span class="sec-index" aria-hidden="true">03</span>
+        <h2 class="sec-title" data-reveal data-ar="كيف نُنفّذ">How we deliver</h2>
+      </div>
+      <div class="timeline" id="timeline">
+        <span class="timeline-line" aria-hidden="true"><i id="timelineFill"></i></span>
+        <div class="step" data-reveal>
+          <span class="step-dot" aria-hidden="true"></span>
+          <span class="step-idx">01</span>
+          <h3 data-ar="التقييم">Assess</h3>
+          <p data-ar="نبدأ بأهداف العمل والمخاطر والامتثال — لا بقائمة منتجات. نُدقّق ما لديك ونرسم ما تحتاجه.">We start with business goals, risk and compliance — not a product list. We audit what you have and map what you need.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="step-dot" aria-hidden="true"></span>
+          <span class="step-idx">02</span>
+          <h3 data-ar="التصميم">Architect</h3>
+          <p data-ar="نُصمّم بنية مرجعية مُحايدة للمورّد، قابلة للتوسّع والتدقيق، وتصمد أمام النمو والتنظيم.">We design a vendor-neutral reference architecture — scalable, auditable, and built to survive growth and regulation.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="step-dot" aria-hidden="true"></span>
+          <span class="step-idx">03</span>
+          <h3 data-ar="التنفيذ">Deploy</h3>
+          <p data-ar="نُنفّذ على مراحل مع اختبار وتوثيق ونقل معرفة — دون تعطيل عملياتك القائمة.">We deliver in controlled phases with testing, documentation and knowledge transfer — without disrupting live operations.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="step-dot" aria-hidden="true"></span>
+          <span class="step-idx">04</span>
+          <h3 data-ar="التشغيل">Operate</h3>
+          <p data-ar="نُشغّل وندعم على مدار الساعة باتفاقيات مستوى خدمة واضحة — فنبقى مسؤولين بعد الإطلاق.">We run and support 24/7 under clear SLAs — we stay accountable long after go-live.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDUSTRIES (sticky stack) ============ -->
+    <section class="section industries" id="industries">
+      <div class="sec-head">
+        <span class="sec-index" aria-hidden="true">04</span>
+        <h2 class="sec-title" data-reveal data-ar="القطاعات التي نخدمها">Who we serve</h2>
+      </div>
+      <div class="stack">
+        <article class="scard" style="--i:0">
+          <div class="scard-body">
+            <span class="scard-kicker" data-ar="القطاع الحكومي">Government</span>
+            <h3 data-ar="بنية رقمية سيادية للجهات الحكومية">Sovereign digital infrastructure for the public sector</h3>
+            <p data-ar="منصّات آمنة ومتوافقة تخدم ملايين المواطنين — بنية جاهزة للتدقيق ومبنية على السيادة الرقمية.">Secure, compliant platforms that serve citizens at national scale — audit-ready and built on digital-sovereignty principles.</p>
+            <span class="scard-tag" data-ar="وزارة التعليم · وزارة العدل">Ministry of Education · Ministry of Justice</span>
+          </div>
+          <div class="scard-visual" style="--img:url('assets/img/services/technology.jpg')"><span aria-hidden="true">GOV</span></div>
+        </article>
+        <article class="scard" style="--i:1">
+          <div class="scard-body">
+            <span class="scard-kicker" data-ar="المصارف والتمويل">Banking &amp; Finance</span>
+            <h3 data-ar="بنية تحتية عالية التوفّر للقطاع المصرفي">High-availability infrastructure for regulated finance</h3>
+            <p data-ar="حوسبة ومراكز بيانات وأمن يلبّي متطلبات الجهات التنظيمية — بلا انقطاع وبلا تنازل عن الأداء.">Compute, data centre and security that meet regulator requirements — zero downtime, no compromise on performance.</p>
+            <span class="scard-tag" data-ar="بنك الرياض · البنك السعودي الفرنسي">Riyad Bank · Banque Saudi Fransi</span>
+          </div>
+          <div class="scard-visual" style="--img:url('assets/img/services/infrastructure.jpg')"><span aria-hidden="true">FIN</span></div>
+        </article>
+        <article class="scard" style="--i:2">
+          <div class="scard-body">
+            <span class="scard-kicker" data-ar="الطاقة والصناعة">Energy &amp; Industrial</span>
+            <h3 data-ar="تقنية تشغيلية لبيئات المهمّات الحرجة">Operational technology for mission-critical sites</h3>
+            <p data-ar="شبكات ومراقبة وتعاون تعمل في أصعب البيئات — من المكاتب إلى الموقع الميداني.">Networks, surveillance and collaboration that perform in the harshest environments — from HQ to the field.</p>
+            <span class="scard-tag" data-ar="أرامكو السعودية · الزامل · زاخر مارين">Saudi Aramco · Zamil · Zakher Marine</span>
+          </div>
+          <div class="scard-visual" style="--img:url('assets/img/services/cloud.jpeg')"><span aria-hidden="true">NRG</span></div>
+        </article>
+        <article class="scard" style="--i:3">
+          <div class="scard-body">
+            <span class="scard-kicker" data-ar="المؤسسات">Enterprise</span>
+            <h3 data-ar="تعاون وسحابة ودعم للفرق الطموحة">Collaboration, cloud and support for ambitious teams</h3>
+            <p data-ar="نُوحّد الاتصالات وننقل الأحمال إلى السحابة ونُدير كل شيء — لتُركّز فرقك على النمو.">We unify communications, move workloads to the cloud and manage it all — so your teams focus on growth.</p>
+            <span class="scard-tag" data-ar="عملاء المؤسسات في أنحاء المملكة">Enterprise clients across the Kingdom</span>
+          </div>
+          <div class="scard-visual" style="--img:url('assets/img/services/collaboration.jpg')"><span aria-hidden="true">ENT</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PARTNERS ============ -->
+    <section class="section logos partners" id="partners">
+      <div class="sec-head">
+        <span class="sec-index" aria-hidden="true">05</span>
+        <h2 class="sec-title" data-reveal data-ar="شركاؤنا التقنيون">Technology partners</h2>
+      </div>
+      <p class="logos-sub" data-reveal data-ar="نُصمّم مع أفضل المنصّات في العالم — ونُبقيها متكاملة.">We build on the world's best platforms — and keep them integrated.</p>
+      <div class="logo-wall">
+        <div class="chip" data-reveal><img src="assets/img/partners/cisco.png" alt="Cisco" /></div>
+        <div class="chip" data-reveal><img src="assets/img/partners/huawei.png" alt="Huawei" /></div>
+        <div class="chip" data-reveal><img src="assets/img/partners/nutanix.svg" alt="Nutanix" /></div>
+        <div class="chip" data-reveal><img src="assets/img/partners/hikvision.png" alt="Hikvision" /></div>
+        <div class="chip" data-reveal><img src="assets/img/partners/logitech.webp" alt="Logitech" /></div>
+        <div class="chip chip-text" data-reveal><span>Polycom</span></div>
+      </div>
+    </section>
+
+    <!-- ============ CLIENTS ============ -->
+    <section class="section logos clients" id="clients">
+      <div class="sec-head">
+        <span class="sec-index" aria-hidden="true">06</span>
+        <h2 class="sec-title" data-reveal data-ar="من يثق بنا">Trusted by</h2>
+      </div>
+      <p class="logos-sub" data-reveal data-ar="جهات حكومية ومصرفية وصناعية تُدير عليها أنظمتها الأكثر أهمية.">Government, banking and industry leaders run their most critical systems with us.</p>
+      <div class="logo-wall clients-wall">
+        <div class="chip" data-reveal><img src="assets/img/clients/aramco.png" alt="Saudi Aramco" /></div>
+        <div class="chip" data-reveal><img src="assets/img/clients/moe.png" alt="Ministry of Education" /></div>
+        <div class="chip" data-reveal><img src="assets/img/clients/moj.png" alt="Ministry of Justice" /></div>
+        <div class="chip" data-reveal><img src="assets/img/clients/riyadbank.png" alt="Riyad Bank" /></div>
+        <div class="chip" data-reveal><img src="assets/img/clients/bsf.png" alt="Banque Saudi Fransi" /></div>
+        <div class="chip" data-reveal><img src="assets/img/clients/zamil.png" alt="Zamil" /></div>
+        <div class="chip" data-reveal><img src="assets/img/clients/zmi.png" alt="Zakher Marine International" /></div>
+        <div class="chip chip-text" data-reveal><span data-ar="+ والمزيد">+ many more</span></div>
+      </div>
+    </section>
+
+    <!-- ============ STATEMENT ============ -->
+    <section class="section statement" id="statement">
+      <blockquote class="quote" id="quote" data-ar="ينبغي أن تختفي التقنية داخل النتائج. نحن نُكامل الطبقات التي لا يراها أحد، حتى تكون النتيجة هي الشيء الوحيد الذي تلاحظه.">
+        Technology should disappear into outcomes. We integrate the layers no one
+        sees — so results are the only thing you notice.
+      </blockquote>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <span class="contact-kicker" data-reveal data-ar="لنبدأ الحديث">Let's start a conversation</span>
+      <a class="mega-link" href="mailto:info@pvt.com.sa" data-reveal aria-label="Email Pro Visions">
+        <span class="ml1" data-ar="لنبدأ">LET'S</span>
+        <span class="ml2" data-ar="العمل <b>↗</b>">TALK <b aria-hidden="true">↗</b></span>
+      </a>
+      <div class="contact-rows">
+        <a class="crow" href="mailto:info@pvt.com.sa">
+          <span class="crow-k" data-ar="البريد">Email</span>
+          <span class="crow-v">info@pvt.com.sa</span>
+        </a>
+        <a class="crow" href="tel:+966000000000">
+          <span class="crow-k" data-ar="الهاتف">Phone</span>
+          <span class="crow-v" data-ar="اتصل بنا ↗">Call us ↗</span>
+        </a>
+        <a class="crow" href="https://wa.me/966000000000" target="_blank" rel="noopener">
+          <span class="crow-k">WhatsApp</span>
+          <span class="crow-v" data-ar="راسلنا ↗">Message us ↗</span>
+        </a>
+        <div class="crow crow-static">
+          <span class="crow-k" data-ar="الموقع">Location</span>
+          <span class="crow-v" data-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <img src="assets/img/brand/provisions-lockup.svg" alt="Pro Visions" class="footer-brand" />
+      <p class="footer-tag" data-ar="تقنية المؤسسات، متكاملة — من التصميم إلى التشغيل.">Enterprise technology, integrated — from architecture to operations.</p>
+      <img src="assets/img/brand/vision2030.svg" alt="Saudi Vision 2030" class="footer-2030" />
+    </div>
+    <div class="footer-bottom">
+      <span class="copy">© <span id="year">2026</span> Pro Visions. <span data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></span>
+      <nav class="socials" aria-label="Social">
+        <a href="#" rel="noopener">LinkedIn</a>
+        <a href="#" rel="noopener">X</a>
+        <a href="#" rel="noopener">Instagram</a>
+      </nav>
+      <button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
+    </div>
+  </footer>
+
+  <!-- ===== Libraries (CDN) ===== -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
+  <script defer src="js/hero-three.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+</html>
