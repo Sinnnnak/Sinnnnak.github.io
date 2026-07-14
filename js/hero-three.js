@@ -29,10 +29,10 @@
       uMouse:  { value: new THREE.Vector2(0.5, 0.5) },
       uScroll: { value: 0 },
       // Pro Visions blue / teal palette
-      uBase:   { value: new THREE.Color(0x0a1628) },
+      uBase:   { value: new THREE.Color(0x070b14) },
       uGold:   { value: new THREE.Color(0x2b8fe0) },
       uGold2:  { value: new THREE.Color(0x1076bc) },
-      uHi:     { value: new THREE.Color(0x52b78e) }
+      uHi:     { value: new THREE.Color(0x22d3ee) }
     };
 
     var frag = [
@@ -140,6 +140,13 @@
     loop();
   }
 
-  if (document.readyState === "complete") start();
-  else window.addEventListener("load", start);
+  function inject() {
+    if (window.THREE) { start(); return; }
+    var s = document.createElement("script");
+    s.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js";
+    s.onload = start;
+    document.head.appendChild(s);
+  }
+  if (document.readyState === "complete") inject();
+  else window.addEventListener("load", inject);
 })();

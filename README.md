@@ -92,14 +92,30 @@ in terms grounded in the real services, partners and clients.
 ## Files
 
 ```
-index.html            complete page
-css/style.css         all styles + RTL + responsive
-js/main.js            loader, i18n, GSAP reveals, scrollspy, cursor, clock
-js/hero-three.js      WebGL aurora shader (Three.js r158)
-assets/img/           logos (brand, partners, clients), industry imagery
-assets/img/og-cover.jpg   1200×630 social-share image
-serve.py              no-cache dev server
+index.html               complete page (+ inline SVG icon sprite: 26 icons)
+css/style.css            all styles + cyber tokens + RTL + responsive
+js/main.js               loader, i18n, GSAP reveals, scrollspy, cursor, clock, slot hydration
+js/hero-three.js         WebGL "blue aurora" shader (Three.js r158, injected after load)
+js/hero-network.js       canvas node-network constellation overlay
+js/assets-manifest.js    swappable image slots (src + bilingual alt)
+assets/img/brand|partners|clients   logos (autocropped, normalized)
+assets/img/photos/       CC/PD stock, duotoned to palette (WebP + 720w)
+assets/img/ai/           AI-image-slot placeholders (swap per IMAGE-PROMPTS.md)
+assets/img/og-cover.jpg  1200×630 social-share image
+serve.py                 no-cache dev server
+IMAGE-CREDITS.md         photo licenses + attribution
+IMAGE-PROMPTS.md         ready text-to-image prompts for the AI slots
+BEFORE-AFTER.md          summary of the graphics/imagery pass
 ```
+
+## Design system (dark cyber-tech)
+
+Tokens live in `css/style.css :root` — `--bg #070B14`, `--blue #2B8FE0`,
+`--cyan #22D3EE` (glow), `--teal`, `--grad`, `--glow`. Reusable utilities:
+`.glass` (glassmorphism card), `.ic` / `.ic-tile` (icon + glowing tile),
+`.mesh` (fixed grid+glow background), `.divider`. Icons are one inline `<svg>`
+sprite of `<symbol>`s referenced via `<use href="#ic-…">`; recolor by changing
+`currentColor` on `.ic`.
 
 ---
 

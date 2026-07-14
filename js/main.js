@@ -15,7 +15,7 @@
   var isTouch = window.matchMedia("(hover: none)").matches;
 
   var AR_LABELS = {
-    heroTitle: "تقنية المؤسسات متكاملة",
+    heroTitle: "آمن. ذكي. رقمي.",
     langBtn: "EN",
     langBtnAlt: "العربية"
   };
@@ -39,8 +39,13 @@
     i18nEls.forEach(function (el) {
       el.innerHTML = ar ? el.getAttribute("data-ar") : el.dataset.en;
     });
+    // bilingual alt text on images
+    doc.querySelectorAll("img[data-alt-ar]").forEach(function (img) {
+      if (img.dataset.altEn === undefined) img.dataset.altEn = img.getAttribute("alt") || "";
+      img.setAttribute("alt", ar ? img.getAttribute("data-alt-ar") : img.dataset.altEn);
+    });
     if (langBtn) langBtn.textContent = ar ? AR_LABELS.langBtn : AR_LABELS.langBtnAlt;
-    if (heroTitle) heroTitle.setAttribute("aria-label", ar ? AR_LABELS.heroTitle : "Enterprise technology, integrated");
+    if (heroTitle) heroTitle.setAttribute("aria-label", ar ? AR_LABELS.heroTitle : "Secure. Smart. Digital.");
     try { localStorage.setItem(STORE, lang); } catch (e) {}
   }
 
@@ -169,7 +174,8 @@
     var nums = doc.querySelectorAll("[data-count]");
     if (!hasST) { nums.forEach(runCounter); return; }
     nums.forEach(function (el) {
-      window.ScrollTrigger.create({ trigger: el, start: "top 92%", once: true, onEnter: function () { runCounter(el); } });
+      if (el.getBoundingClientRect().top < (window.innerHeight || 900) - 20) { runCounter(el); return; }
+      window.ScrollTrigger.create({ trigger: el, start: "top bottom", once: true, onEnter: function () { runCounter(el); } });
     });
   }
 
@@ -255,7 +261,7 @@
     var lines = doc.querySelectorAll(".hero-title .line > span");
     var others = [".hero-meta", ".hero-desc", ".hero-cta", ".hero-stats"];
     var tl = gsap.timeline();
-    tl.to(lines, { yPercent: 0, duration: 1.1, ease: "power4.out", stagger: 0.09 });
+    tl.to(lines, { yPercent: 0, duration: 0.8, ease: "power4.out", stagger: 0.06 });
     others.forEach(function (s, i) {
       var el = doc.querySelector(s); if (!el) return;
       tl.to(el, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.4 + i * 0.08);
@@ -265,25 +271,8 @@
   /* ---------------- Custom cursor + magnetic ---------------- */
   function initCursor() {
     if (isTouch || !hasGSAP) return;
-    var dot = doc.querySelector(".cursor-dot");
-    var ring = doc.querySelector(".cursor-ring");
-    if (!dot || !ring) return;
     var gsap = window.gsap;
-    var xTo = gsap.quickTo(ring, "x", { duration: 0.35, ease: "power3" });
-    var yTo = gsap.quickTo(ring, "y", { duration: 0.35, ease: "power3" });
-    var dxTo = gsap.quickTo(dot, "x", { duration: 0.08 });
-    var dyTo = gsap.quickTo(dot, "y", { duration: 0.08 });
-    var shown = false;
-    window.addEventListener("mousemove", function (e) {
-      if (!shown) { shown = true; gsap.set([dot, ring], { x: e.clientX, y: e.clientY }); body.classList.add("cursor-active"); }
-      xTo(e.clientX); yTo(e.clientY); dxTo(e.clientX); dyTo(e.clientY);
-    }, { passive: true });
-    doc.querySelectorAll("a, button, .svc-row, .chip").forEach(function (el) {
-      el.addEventListener("mouseenter", function () { body.classList.add("cursor-grow"); });
-      el.addEventListener("mouseleave", function () { body.classList.remove("cursor-grow"); });
-    });
-
-    // Magnetic buttons
+    // Magnetic buttons (custom cursor removed — it read as a stray dot on hover)
     doc.querySelectorAll(".pill, .lang-toggle, .to-top, .hero-cta").forEach(function (el) {
       var mx = gsap.quickTo(el, "x", { duration: 0.3, ease: "power3" });
       var my = gsap.quickTo(el, "y", { duration: 0.3, ease: "power3" });
@@ -313,13 +302,29 @@
     var tl = gsap.timeline({ onComplete: function () {
       // Lift the curtain and animate the hero in together.
       heroIntro();
-      gsap.to(loader, { yPercent: -100, duration: 0.9, ease: "power4.inOut", onComplete: function () { loader.style.display = "none"; done(); } });
+      gsap.to(loader, { yPercent: -100, duration: 0.6, ease: "power4.inOut", onComplete: function () { loader.style.display = "none"; done(); } });
     }});
-    tl.to(obj, { v: 100, duration: 1.5, ease: "power2.inOut", onUpdate: function () {
+    tl.to(obj, { v: 100, duration: 0.45, ease: "power2.inOut", onUpdate: function () {
       var v = Math.round(obj.v);
       if (num) num.textContent = v;
       if (bar) bar.style.width = v + "%";
     }});
+  }
+
+
+  /* ---------------- Asset-manifest slot hydration ---------------- */
+  function hydrateSlots() {
+    var man = window.PV_ASSETS || {};
+    doc.querySelectorAll("img[data-slot]").forEach(function (img) {
+      var a = man[img.getAttribute("data-slot")];
+      if (!a) return;
+      if (a.src) img.setAttribute("src", a.src);
+      if (a.srcset) img.setAttribute("srcset", a.srcset); else img.removeAttribute("srcset");
+      if (a.alt) {
+        img.setAttribute("alt", a.alt.en || "");
+        if (a.alt.ar) img.setAttribute("data-alt-ar", a.alt.ar);
+      }
+    });
   }
 
   /* ---------------- Boot ---------------- */
@@ -334,6 +339,7 @@
     }
 
     prepHero();
+    hydrateSlots();
     initI18n();
     initClock();
     initNav();
